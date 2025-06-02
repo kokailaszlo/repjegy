@@ -1,4 +1,4 @@
-class Foglalas:
+class JegyFoglalas:
     def __init__(self):
         self.foglalasok = {}
 

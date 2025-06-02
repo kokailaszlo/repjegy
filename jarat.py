@@ -11,7 +11,7 @@ class Jarat(ABC):
         pass
 
 
-class Belfoldi(Jarat):
+class BelfoldiJarat(Jarat):
     def __init__(self, jaratszam, celallomas):
         super().__init__(jaratszam, celallomas, jegyar=10000)
 
@@ -19,7 +19,7 @@ class Belfoldi(Jarat):
         return f"Belföldi járat: {self.jaratszam} - {self.celallomas} - Ár: {self.jegyar} Ft"
 
 
-class Nemzetkozi(Jarat):
+class NemzetkoziJarat(Jarat):
     def __init__(self, jaratszam, celallomas):
         super().__init__(jaratszam, celallomas, jegyar=40000)
 

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
-from jarat import Belfoldi, Nemzetkozi
-from legitarsasag import Tarsasag
-from foglalasok import Foglalas
+from jarat import BelfoldiJarat, NemzetkoziJarat
+from legitarsasag import LegiTarsasag
+from foglalasok import JegyFoglalas
 
 def main():
-    legitarsasag = Tarsasag("SkyFly")
-    foglalas = Foglalas()
+    legitarsasag = LegiTarsasag("SkyFly")
+    foglalas = JegyFoglalas()
 
-    legitarsasag.hozzaad(Belfoldi("b001", "Budapest"))
-    legitarsasag.hozzaad(Belfoldi("b002", "Debrecen"))
-    legitarsasag.hozzaad(Nemzetkozi("n001", "London"))
+    legitarsasag.hozzaad(BelfoldiJarat("b001", "Budapest"))
+    legitarsasag.hozzaad(BelfoldiJarat("b002", "Debrecen"))
+    legitarsasag.hozzaad(NemzetkoziJarat("n001", "London"))
 
     foglalas.foglal("Alka Ida", legitarsasag.keres("b001"))
     foglalas.foglal("Bak Ancsa", legitarsasag.keres("n001"))
@@ -35,7 +35,7 @@ def main():
             print("{:<11} {:<10} {:<11} {:<15}".format("Típus", "Járatszám", "Célállomás", "Jegyár (Ft)"))
             print("-" * 46)
             for jarat in legitarsasag.jaratok:
-              tipus = "Belföldi" if isinstance(jarat, Belfoldi) else "Nemzetközi"
+              tipus = "Belföldi" if isinstance(jarat, BelfoldiJarat) else "Nemzetközi"
               print("{:<11} {:<10} {:<11} {:<15}".format(tipus, jarat.jaratszam, jarat.celallomas, jarat.jegyar))
 
             nev = input("\nUtas neve: ")

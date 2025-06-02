@@ -1,4 +1,4 @@
-class Tarsasag:
+class LegiTarsasag:
     def __init__(self, nev):
         self.nev = nev
         self.jaratok = []
@@ -11,6 +11,3 @@ class Tarsasag:
             if j.jaratszam == jaratszam:
                 return j
         return None
-
-#    def listaz(self):
-#        return [jarat.info() for jarat in self.jaratok]
